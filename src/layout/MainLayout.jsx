@@ -1,18 +1,13 @@
 import React from 'react'
 import Header from '../pages/Header'
-import { Team } from '../pages/Team'
-import { Projects } from '../pages/Projects'
-import { Calendar } from '../pages/Calendar'
-import { Product } from '../pages/Product'
+import AppRouter from '../RouterDom/AppRouter'
+
 
 export default function MainLayout() {
   return (
     <div>
         <Header />
-        <Team />
-        <Projects />
-        <Calendar />
-        <Product />
+        <AppRouter />
     </div>
   )
 }
