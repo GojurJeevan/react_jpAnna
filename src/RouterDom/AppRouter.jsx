@@ -2,6 +2,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { Product } from '../pages/Product'
 import { Projects } from '../pages/Projects'
+import Header from '../pages/Header'
 
 export default function AppRouter() {
   return (
