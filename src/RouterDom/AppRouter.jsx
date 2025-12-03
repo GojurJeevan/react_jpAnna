@@ -1,16 +1,21 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { Product } from '../pages/Product'
-import { Projects } from '../pages/Projects'
-import Header from '../pages/Header'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { Product } from "../pages/Product";
+import { Projects } from "../pages/Projects";
+import { UserLogin } from "../components/UserLogin";
+import { SignUp } from "../userenter/SignUp";
+import Login from "../userenter/Login";
 
 export default function AppRouter() {
   return (
     <div>
-        <Routes>
-            <Route path='/projects' element={<Projects />}/>
-            <Route path='/product' element={<Product />}/>
-        </Routes>
+      <Routes>
+        <Route path="/" element={<UserLogin />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
     </div>
-  )
+  );
 }
