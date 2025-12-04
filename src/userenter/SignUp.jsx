@@ -3,8 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { regexConditions } from "../regex/regexConditions";
 
 export const SignUp = () => {
-
-    let navigate = useNavigate();
+  let navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -20,6 +19,7 @@ export const SignUp = () => {
       ...formData,
       [name]: value,
     });
+    localStorage.setItem("user", JSON.stringify(formData));
   };
 
   const regexValidate = () => {
@@ -44,9 +44,9 @@ export const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (regexValidate) {
-      setTimeout(()=>{
-        navigate('/product')
-      },1000)
+      setTimeout(() => {
+        navigate("/product");
+      }, 1000);
     }
   };
 

@@ -1,6 +1,40 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Login() {
+  const [entry, setEntry] = useState({
+    name: "",
+    password: "",
+  });
+
+  const [err, setErr] = useState();
+
+  let navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setEntry({
+      ...entry,
+      [name]: value,
+    });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const userDetails = JSON.parse(localStorage.getItem("user"));
+
+    if (
+      entry.name === userDetails.name &&
+      entry.password === userDetails.password
+    ) {
+      setErr("");
+      alert("Login Successful!");
+      navigate("/home");
+    } else {
+      setErr("Invalid name or password!");
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
@@ -8,17 +42,19 @@ export default function Login() {
           Login
         </h2>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleLogin}>
           {/* Email */}
           <div>
             <label className="block mb-1 font-medium text-gray-700">
-              Email
+              Full Name
             </label>
             <input
-              type="email"
+              type="text"
+              name="name"
+              value={entry.name}
+              onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Enter your email"
-              required
+              placeholder="Enter your name"
             />
           </div>
 
@@ -29,11 +65,14 @@ export default function Login() {
             </label>
             <input
               type="password"
+              name="password"
+              value={entry.password}
+              onChange={handleChange}
               className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
               placeholder="Enter your password"
-              required
             />
           </div>
+          {err && <p className="text-red-500 text-center font-medium">{err}</p>}
 
           {/* Submit Button */}
           <button

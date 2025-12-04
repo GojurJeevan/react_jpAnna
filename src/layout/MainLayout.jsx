@@ -2,17 +2,21 @@ import React, { useState } from 'react'
 import Header from '../pages/Header'
 import AppRouter from '../RouterDom/AppRouter'
 import Footer from '../pages/Footer'
+import { useLocation } from 'react-router-dom'
 
 
 export default function MainLayout() {
 
-  const [isUser,setIsUser] = useState(true)
+  let hidePath = ['/','/signup']
+  let location = useLocation();
+
+  let componentPath = hidePath.includes(location.pathname)
 
   return (
     <div>
-        {!isUser && <Header />}
+        {!componentPath && <Header />}
         <AppRouter />
-        {!isUser && <Footer />}
+        {!componentPath && <Footer />}
     </div>
   )
 }
