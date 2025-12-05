@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import Loader from "../Loader/Loader";
 import { motion } from "framer-motion";
+import Loader from "../Loader/Loader";
 
 const ProductsData = () => {
   let { id } = useParams();
