@@ -10,7 +10,7 @@ const ProductsData = () => {
 
   useEffect(() => {
     async function productDetails() {
-      let { data } = await axios.get(`https://dummyjson.com/products/${id}`);
+      let { data } = await axios.get(`https://dummyjson.com/product/${id}`);
       setProducts(data);
     }
     productDetails();
