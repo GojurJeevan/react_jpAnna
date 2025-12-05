@@ -47,9 +47,7 @@ const ProductsData = () => {
 
         {/* Price & Rating */}
         <div className="flex items-center justify-between bg-gray-50 p-4 rounded-xl border">
-          <p className="text-2xl font-bold text-blue-600">
-            ${product.price}
-          </p>
+          <p className="text-2xl font-bold text-blue-600">${product.price}</p>
           <p className="text-yellow-500 font-semibold text-lg">
             ⭐ {product.rating}
           </p>
@@ -61,6 +59,16 @@ const ProductsData = () => {
           <p className="text-gray-600 text-lg mt-1 capitalize">
             {product.category}
           </p>
+        </div>
+        {/* Buttons */}
+        <div className="mt-8 flex gap-4">
+          <button className="w-1/2 bg-blue-600 text-white py-3 rounded-xl font-semibold shadow-md hover:bg-blue-700 transition cursor-pointer">
+            Add to Cart
+          </button>
+
+          <button className="w-1/2 bg-red-500 text-white py-3 rounded-xl font-semibold shadow-md hover:bg-red-600 transition cursor-pointer">
+            Remove from Cart
+          </button>
         </div>
       </motion.div>
     </div>
