@@ -1,7 +1,9 @@
 import axios from "axios";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-export const ProductsList = () => {
+const ProductsList = () => {
   let [dataProducts, setDataProducts] = useState([]);
   let [search, setSearch] = useState("");
   let [category, setCategory] = useState("");
@@ -80,20 +82,25 @@ export const ProductsList = () => {
       {/* Product Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {dataProducts.map((item) => (
-          <div
-            key={item.id}
-            className="bg-white shadow-md rounded-xl p-4 hover:shadow-xl transition"
-          >
-            <img
-              src={item.thumbnail}
-              alt={item.title}
-              className="w-full h-40 object-cover rounded-lg mb-3"
-            />
-            <h1 className="text-lg font-semibold truncate">{item.title}</h1>
-            <p className="text-sm text-gray-600 mt-2 line-clamp-3">
-              {item.description}
-            </p>
-          </div>
+          <Link to={`/product/${item.id}`} key={item.id}>
+            <motion.div
+              key={item.id}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="bg-white shadow-md rounded-xl p-4 hover:shadow-xl transition"
+            >
+              <img
+                src={item.thumbnail}
+                alt={item.title}
+                className="w-full h-40 object-cover rounded-lg mb-3"
+              />
+              <h1 className="text-lg font-semibold truncate">{item.title}</h1>
+              <p className="text-sm text-gray-600 mt-2 line-clamp-3">
+                {item.description}
+              </p>
+            </motion.div>
+          </Link>
         ))}
       </div>
 
@@ -102,6 +109,7 @@ export const ProductsList = () => {
         {viewBtn > 0 &&
           Array.from({ length: viewBtn }, (_, i) => i + 1).map((btn) => (
             <button
+              key={btn}
               className={`px-4 py-2 rounded-lg border shadow-sm ${
                 page === btn
                   ? "bg-blue-600 text-white"
@@ -116,3 +124,5 @@ export const ProductsList = () => {
     </div>
   );
 };
+
+export default ProductsList;

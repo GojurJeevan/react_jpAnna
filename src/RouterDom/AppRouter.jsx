@@ -5,6 +5,7 @@ import { Projects } from "../pages/Projects";
 import { UserLogin } from "../components/UserLogin";
 import { SignUp } from "../userenter/SignUp";
 import Login from "../userenter/Login";
+import ProductsData from "../Products/ProductsData";
 
 export default function AppRouter() {
   return (
@@ -15,6 +16,7 @@ export default function AppRouter() {
         <Route path="/product" element={<Product />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/product/:id" element={<ProductsData />} />
       </Routes>
     </div>
   );
