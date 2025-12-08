@@ -7,6 +7,8 @@ import { SignUp } from "../userenter/SignUp";
 import Login from "../userenter/Login";
 import ProductsData from "../Products/ProductsData";
 import Home from "../pages/Home";
+import { UserDetails } from "../components/UserDetails";
+
 
 export default function AppRouter() {
   return (
@@ -19,6 +21,7 @@ export default function AppRouter() {
         <Route path="/login" element={<Login />} />
         <Route path="/product/:id" element={<ProductsData />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/userdetails" element={<UserDetails/>}/>
       </Routes>
     </div>
   );

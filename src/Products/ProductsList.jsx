@@ -11,7 +11,7 @@ const ProductsList = () => {
   let [page, setPage] = useState(1);
   let [productButtons, setProductButtons] = useState(0);
 
-  let perPage = 10;
+  const perPage = 10;
 
   useEffect(() => {
     async function dataApi() {
