@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useMemo, useState, useCallback } from "react";
-import Sidebar from "../sidebar/SideBar";
 
 export const UserDetails = () => {
   const [userData, setUserData] = useState([]);
@@ -46,7 +45,7 @@ export const UserDetails = () => {
                      shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
-        <div className="overflow-x-auto rounded-xl shadow-lg bg-white">
+        <div className="rounded-xl shadow-lg bg-white">
           <table className="w-full text-left border border-gray-300 rounded-lg">
             <thead className="bg-blue-100">
               <tr>
