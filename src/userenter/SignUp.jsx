@@ -32,7 +32,7 @@ export const SignUp = () => {
       return false;
     }
 
-    if (!regexConditions.passPattern.test(formData.password)) {
+    if (!regexConditions.PassPattern.test(formData.password)) {
       setErrMessage("Weak Password");
       return false;
     }
@@ -43,7 +43,7 @@ export const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (regexValidate) {
+    if (regexValidate()) {
       setTimeout(() => {
         navigate("/product");
       }, 1000);
