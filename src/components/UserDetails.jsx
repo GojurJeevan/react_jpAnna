@@ -91,7 +91,7 @@ export const UserDetails = () => {
 
                   <td className="px-5 py-3 border-b text-center">
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" onClick={<Sidebar/>}
+                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
                     >
                       Edit
                     </button>

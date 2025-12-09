@@ -73,7 +73,7 @@ export default function Header() {
               {/* right section desktop */}
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  {/* Theme toggle (NOT inside a button) */}
+
                   <Toggle />
 
                   {/* Profile dropdown */}
