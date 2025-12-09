@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import Sidebar from "../sidebar/SideBar";
 
 export const UserDetails = () => {
@@ -30,8 +30,10 @@ export const UserDetails = () => {
     page * perPage
   );
 
+
   return (
     <div className="flex">
+
       <div className="p-6 bg-gray-100 min-h-screen flex-1">
         <h1 className="text-3xl font-bold mb-5 text-gray-800">User Details</h1>
 
@@ -78,12 +80,8 @@ export const UserDetails = () => {
                   key={person.id}
                   className="hover:bg-gray-100 transition-all duration-200"
                 >
-                  <td className="px-5 py-3 border-b">
-                    {person.id}
-                    </td>
-                  <td className="px-5 py-3 border-b">
-                    {person.firstName}
-                  </td>
+                  <td className="px-5 py-3 border-b">{person.id}</td>
+                  <td className="px-5 py-3 border-b">{person.firstName}</td>
                   <td className="px-5 py-3 border-b">{person.email}</td>
                   <td className="px-5 py-3 border-b">{person.phone}</td>
                   <td className="px-5 py-3 border-b capitalize">
@@ -91,7 +89,10 @@ export const UserDetails = () => {
                   </td>
 
                   <td className="px-5 py-3 border-b text-center">
-                    <button className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                    <button
+                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
+                      onClick={<Sidebar/>} 
+                    >
                       Edit
                     </button>
                   </td>

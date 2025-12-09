@@ -1,10 +1,8 @@
-import { useState } from "react";
-
 export default function Sidebar() {
   return (
     <>
       <div>
-        <form action="">
+        <form>
           <input type="text" placeholder="firstName" /> <br />
           <input type="email" placeholder="Email" /> <br />
           <input type="phone" placeholder="Mobile"/> <br />
