@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useMemo, useState, useCallback } from "react";
+import Sidebar from "../sidebar/SideBar";
 
 export const UserDetails = () => {
   const [userData, setUserData] = useState([]);
@@ -33,6 +34,7 @@ export const UserDetails = () => {
   return (
     <div className="flex">
 
+{/* <Sidebar /> */}
       <div className="p-6 bg-gray-100 min-h-screen flex-1">
         <h1 className="text-3xl font-bold mb-5 text-gray-800">User Details</h1>
 
@@ -89,7 +91,7 @@ export const UserDetails = () => {
 
                   <td className="px-5 py-3 border-b text-center">
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" 
+                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition" onClick={<Sidebar/>}
                     >
                       Edit
                     </button>
