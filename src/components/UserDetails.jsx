@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useMemo, useState, useCallback } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Sidebar from "../sidebar/SideBar";
 
 export const UserDetails = () => {
