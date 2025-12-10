@@ -9,8 +9,8 @@ export const Toggle = () => {
     <button onClick={toggleTheme} className="cursor-pointer">
       {
         theme === "light"
-          ? <FontAwesomeIcon icon={faMoon} className="text-white"/> 
-          : <FontAwesomeIcon icon={faSun} />  
+          ? <FontAwesomeIcon icon={faMoon} className="text-black"/> 
+          : <FontAwesomeIcon icon={faSun} className="text-white"/>  
       }
     </button>
   );

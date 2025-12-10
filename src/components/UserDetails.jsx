@@ -9,7 +9,6 @@ export const UserDetails = () => {
 
   const perPage = 15;
 
-  // Drawer states
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
 
