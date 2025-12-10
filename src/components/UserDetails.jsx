@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useMemo, useState } from "react";
-import Sidebar from "../sidebar/SideBar";
+import Sidebar from "../sidebar/Sidebar";
 
 export const UserDetails = () => {
   const [userData, setUserData] = useState([]);
@@ -8,6 +8,10 @@ export const UserDetails = () => {
   const [page, setPage] = useState(1);
 
   const perPage = 15;
+
+  // Drawer states
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   useEffect(() => {
     async function dataApi() {
@@ -30,11 +34,8 @@ export const UserDetails = () => {
     page * perPage
   );
 
-
   return (
     <div className="flex">
-
-<Sidebar />
       <div className="p-6 bg-gray-100 min-h-screen flex-1">
         <h1 className="text-3xl font-bold mb-5 text-gray-800">User Details</h1>
 
@@ -43,7 +44,7 @@ export const UserDetails = () => {
           placeholder="firstName"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="border border-gray-300 px-4 py-3 rounded-lg w-80 mb-6
+          className="border border-gray-300 px-4 py-3 rounded-lg w-80 mb-6 
                      shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
@@ -66,10 +67,10 @@ export const UserDetails = () => {
                 <th className="px-5 py-3 border-b font-semibold text-gray-700">
                   Gender
                 </th>
-                <th className="px-5 py-3 border-b font-semibold text-gray-700 text-center">
+                <th className="px-5 py-3 border-b text-center font-semibold">
                   Edit
                 </th>
-                <th className="px-5 py-3 border-b font-semibold text-gray-700 text-center">
+                <th className="px-5 py-3 border-b text-center font-semibold">
                   Delete
                 </th>
               </tr>
@@ -91,7 +92,12 @@ export const UserDetails = () => {
 
                   <td className="px-5 py-3 border-b text-center">
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition">
+                      onClick={() => {
+                        setSelectedUser(person);
+                        setDrawerOpen(true);
+                      }}
+                      className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition"
+                    >
                       Edit
                     </button>
                   </td>
@@ -107,24 +113,29 @@ export const UserDetails = () => {
           </table>
         </div>
 
+        {/* Pagination */}
         <div className="flex justify-center mt-6 space-x-2">
           {Array.from({ length: totalPages }).map((_, i) => (
             <button
               key={i}
               onClick={() => setPage(i + 1)}
-              className={`px-4 py-2 rounded-lg border 
-            ${
-              page === i + 1
-                ? "bg-blue-600 text-white"
-                : "bg-white text-gray-700"
-            }
-            hover:bg-blue-500 hover:text-white transition`}
+              className={`px-4 py-2 rounded-lg border ${
+                page === i + 1
+                  ? "bg-blue-600 text-white"
+                  : "bg-white text-gray-700"
+              } hover:bg-blue-500 hover:text-white transition`}
             >
               {i + 1}
             </button>
           ))}
         </div>
       </div>
+
+      <Sidebar
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        user={selectedUser}
+      />
     </div>
   );
 };

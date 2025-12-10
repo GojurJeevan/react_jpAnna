@@ -8,7 +8,7 @@ import Login from "../userenter/Login";
 import ProductsData from "../Products/ProductsData";
 import Home from "../pages/Home";
 import { UserDetails } from "../components/UserDetails";
-import Sidebar from "../sidebar/SideBar";
+import Sidebar from "../sidebar/Sidebar";
 
 
 export default function AppRouter() {
