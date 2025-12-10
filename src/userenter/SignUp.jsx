@@ -45,7 +45,7 @@ export const SignUp = () => {
     e.preventDefault();
     if (regexValidate()) {
       setTimeout(() => {
-        navigate("/product");
+        navigate("/home");
       }, 1000);
     }
   };
