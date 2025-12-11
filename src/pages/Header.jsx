@@ -9,7 +9,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-import { Toggle } from "../Toggle/Toggle";
+// import { Toggle } from "../Toggle/Toggle";
 
 const user = {
   name: "Tom Cook",
@@ -74,7 +74,6 @@ export default function Header() {
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
 
-                  <Toggle />
 
                   {/* Profile dropdown */}
                   <Menu as="div" className="relative ml-3">
@@ -166,7 +165,6 @@ export default function Header() {
 
               <div className="mt-3 space-y-3 px-4">
                 {/* mobile theme toggle */}
-                <Toggle />
 
                 {userNavigation.map((item) => (
                   <DisclosureButton
