@@ -4,7 +4,7 @@ export const Banner = () => {
   const refData = useRef(null);
   const endDate = new Date("2025-12-25 23:59:59").getTime();
 
-  const [, setTick] = useState(0);
+  const [tick, setTick] = useState(0);
 
   useEffect(() => {
     refData.current = setInterval(() => {
@@ -25,18 +25,17 @@ export const Banner = () => {
 
   return (
     <div className="relative w-full">
-      {/* Banner Image */}
+
       <img
         src="https://img.freepik.com/free-vector/vibrant-color-black-friday-festive-sale-banner-with-50-off_1017-40612.jpg?semt=ais_hybrid&w=740&q=80"
         className="w-full h-120 sm:h-[420px] md:h-[500px] object-cover"
       />
 
-      {/* Centered Row (Offer Text + Timer Side by Side) */}
       <div className="absolute right-50 top-50 flex items-center justify-center px-4">
         <div className="flex items-center gap-4 sm:gap-8 bg-amber-600 bg-opacity-60 px-6 py-4 rounded-xl backdrop-blur-md shadow-xl">
-          {/* TIMER */}
+        
           <div className="flex gap-4 sm:gap-6 text-white">
-            {/* Days */}
+
             <div className="text-center">
               <p className="text-xl sm:text-3xl md:text-4xl font-bold">
                 {days}
@@ -46,7 +45,6 @@ export const Banner = () => {
               </p>
             </div>
 
-            {/* Hours */}
             <div className="text-center">
               <p className="text-xl sm:text-3xl md:text-4xl font-bold">
                 {hours}
@@ -56,7 +54,6 @@ export const Banner = () => {
               </p>
             </div>
 
-            {/* Minutes */}
             <div className="text-center">
               <p className="text-xl sm:text-3xl md:text-4xl font-bold">
                 {minutes}
@@ -66,7 +63,6 @@ export const Banner = () => {
               </p>
             </div>
 
-            {/* Seconds */}
             <div className="text-center">
               <p className="text-xl sm:text-3xl md:text-4xl font-bold">
                 {seconds}
