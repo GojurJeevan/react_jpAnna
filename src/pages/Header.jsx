@@ -23,7 +23,6 @@ const navigation = [
   { name: "Product", path: "/product", current: false },
   { name: "User", path: "/", current: true },
   { name: "Details", path: "/userdetails", current: false },
-  {name:"Stop Watch",path:"/watch",current:false},
 ];
 const userNavigation = [
   { name: "Your profile", path: "#" },

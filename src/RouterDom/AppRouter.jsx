@@ -9,7 +9,6 @@ import ProductsData from "../Products/ProductsData";
 import Home from "../pages/Home";
 import { UserDetails } from "../components/UserDetails";
 import Sidebar from "../sidebar/Sidebar";
-import { StopWatch } from "../stopwatch/StopWatch";
 
 
 export default function AppRouter() {
@@ -25,7 +24,6 @@ export default function AppRouter() {
         <Route path="/home" element={<Home />} />
         <Route path="/userdetails" element={<UserDetails/>}/>
         <Route path="/sidebar" element={<Sidebar/>} />
-        <Route path="/watch" element={<StopWatch/>} />
       </Routes>
     </div>
   );
