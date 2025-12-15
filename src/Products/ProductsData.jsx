@@ -34,7 +34,6 @@ const ProductsData = () => {
   return (
     <div className="px-4 py-6 bg-gray-100 min-h-screen flex flex-col lg:flex-row gap-8 justify-center">
 
-      {/* LEFT IMAGE + ACTION BUTTONS */}
       <motion.div
         initial={{ opacity: 0, x: -80 }}
         animate={{ opacity: 1, x: 0 }}
