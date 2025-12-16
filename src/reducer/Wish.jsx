@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Design } from "../snowfall/Design";
+
 
 export const Wish = ({ onClose }) => {
   const [show, setShow] = useState(true);
@@ -7,8 +7,7 @@ export const Wish = ({ onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShow(false);
-      // <Design />
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, []);
