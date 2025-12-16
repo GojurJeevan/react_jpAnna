@@ -1,18 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-let api = "https://dummyjson.com/products";
-
 let cardsAPISlice = createSlice({
-    name:'productsAPI',
-    initialState:[],
+  name: "productsAPI",
+  initialState: [],
 
-    reducers:{
-        data : async function apiData() {
-            
-        }
-    }
-})
+  reducers: {
+    setProducts: (state, action) => action.payload,
+  },
+});
 
-export const {data} = cardsAPISlice.actions;
+
+export const a = async function productsData() {
+    const {data} = await axios.get("https://dummyjson.com/products");
+    console.log(data.products);
+  setProducts(data.products);
+}
+
+export const { setProducts } = cardsAPISlice.actions;
 export default cardsAPISlice.reducer;
