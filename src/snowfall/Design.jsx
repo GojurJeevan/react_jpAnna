@@ -21,7 +21,7 @@ export const Design = () => {
     
     return(
         <>
-        <Snowfall color="#FFFAFA"
+        <Snowfall color="black"
                   speed={[3.0,5.0]}
                   snowflakeCount={200}
         />

@@ -1,16 +1,12 @@
-import './App.css'
-import MainLayout from './layout/MainLayout'
-
+import "./App.css";
+import MainLayout from "./layout/MainLayout";
 
 function App() {
-
   return (
     <>
-    <MainLayout />
+      <MainLayout />
     </>
-      
-   
-  )
+  );
 }
 
-export default App
+export default App;
