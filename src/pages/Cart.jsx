@@ -1,4 +1,4 @@
-import { Counter } from "../redux/Counter"
+import { Counter } from "../redux/CounterExample/Counter"
 
 export const Cart = () =>{
     return (
