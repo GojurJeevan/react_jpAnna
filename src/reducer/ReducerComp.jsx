@@ -1,5 +1,6 @@
 import { useReducer, useState } from "react";
 import { Wish } from "./Wish";
+import { Design } from "../snowfall/Design";
 
 export const ReducerComp = ({ onClose }) => {
   const userData = JSON.parse(localStorage.getItem("user"));
@@ -19,6 +20,7 @@ export const ReducerComp = ({ onClose }) => {
         return (
           <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
             <Wish />
+            <Design />
           </div>
         );
       default:
