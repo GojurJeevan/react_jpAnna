@@ -1,20 +1,19 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { a } from "./cardsAPISlice";
+import { setProducts } from "./cardsAPISlice";
+import axios from "axios";
 
 export const CardsAPI = () => {
-  const apiData = useSelector((state) => state.productsAPI);
+  const apiData = useSelector((state) => state.products);
   const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(a())
-  },[dispatch])
-
+  // useEffect(()=>{
+  //     dispatch(()=>)
+  // },[dispatch])
+  
   return (
     <>
-      {apiData.map((item)=>
-        <p key={item.id}>{item.title}</p>
-    )}
+      
     </>
   );
 };

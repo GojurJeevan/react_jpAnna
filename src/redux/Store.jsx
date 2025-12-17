@@ -5,6 +5,6 @@ import fetchProducts from "./Cards/cardsAPISlice";
 export const Store = configureStore({
   reducer: {
     counter: counterExample,
-    productsAPI: fetchProducts,
+    products: fetchProducts,
   },
 });
