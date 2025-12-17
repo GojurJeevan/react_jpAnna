@@ -4,12 +4,8 @@ import { setProducts } from "./cardsAPISlice";
 import axios from "axios";
 
 export const CardsAPI = () => {
-  const apiData = useSelector((state) => state.products);
+  const apiData = useSelector((state) => state.productsAPI);
   const dispatch = useDispatch();
-
-  // useEffect(()=>{
-  //     dispatch(()=>)
-  // },[dispatch])
   
   return (
     <>

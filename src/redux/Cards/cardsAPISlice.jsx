@@ -1,11 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const data = axios.get("https://dummyjson.com/products")
+console.log(data.products);
+
 let cardsAPISlice = createSlice({
   name: "productsAPI",
-  initialState: "https://dummyjson.com/products",
+  initialState: data,
   reducers: {
-    setProducts: (state, action) => axios.get({state})
+    setProducts: (state, action) => axios.get()
   },
 });
 
