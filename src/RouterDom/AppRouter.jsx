@@ -9,7 +9,7 @@ import ProductsData from "../Products/ProductsData";
 import Home from "../pages/Home";
 import { UserDetails } from "../components/UserDetails";
 import Sidebar from "../sidebar/Sidebar";
-import { Cart } from "../pages/Cart";
+import { Cart } from "../redux/cart/Cart";
 
 
 export default function AppRouter() {

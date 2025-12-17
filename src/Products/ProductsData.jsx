@@ -5,12 +5,16 @@ import { motion } from "framer-motion";
 import Loader from "../Loader/Loader";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch } from "react-redux";
+import { ADDTOCART } from "../redux/cart/CartSlice";
 
 const ProductsData = () => {
   let { id } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedImage, setSelectedImage] = useState("");
   const [review, setReview] = useState([]);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function productDetails() {
@@ -49,7 +53,7 @@ const ProductsData = () => {
 
         {/* Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 mt-6">
-          <button className="bg-amber-500 w-full py-3 text-white rounded hover:bg-amber-600">
+          <button className="bg-amber-500 w-full py-3 text-white rounded hover:bg-amber-600" onClick={()=>dispatch(ADDTOCART({...product,quantity:1}))}>
             Add to Cart
           </button>
           <button className="bg-red-500 w-full py-3 text-white rounded hover:bg-red-600">

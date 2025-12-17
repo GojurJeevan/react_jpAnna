@@ -1,4 +1,3 @@
-import { faL } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react"
 import Snowfall from "react-snowfall"
 

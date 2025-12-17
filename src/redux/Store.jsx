@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import counterExample from "./CounterExample/CounterSlice";
-import fetchProducts from "./Cards/cardsAPISlice";
+import cartData from "./cart/CartSlice"
 
-export const Store = configureStore({
+export default configureStore({
   reducer: {
     counter: counterExample,
-    productsAPI: fetchProducts,
+    cart: cartData,
   },
 });
+
+
