@@ -1,12 +1,12 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { DEC, INC, REMOVE } from "./CartSlice";
 
 export const Cart = () => {
   const data = useSelector((state) => state.cart);
+  let dispatch = useDispatch();
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
-      <h1 className="text-2xl font-semibold mb-6">My Cart</h1>
-
       {data.map((item) => (
         <div
           key={item.id}
@@ -27,6 +27,9 @@ export const Cart = () => {
           <div className="font-semibold">
             ${item.price * item.quantity}
           </div>
+          <button onClick={()=>dispatch(REMOVE(item.id))}>Remove</button>
+          <button onClick={()=>dispatch(INC(item.id))}>INC</button>
+          <button onClick={()=>dispatch(DEC(item.id))}>DEC</button>
         </div>
       ))}
     </div>
